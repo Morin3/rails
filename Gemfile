@@ -35,7 +35,7 @@ gem "terser", ">= 1.1.4", require: false
 gem "json", ">= 2.0.0", "!=2.7.0"
 
 # Workaround until Ruby ships with cgi version 0.3.6 or higher.
-gem "cgi", ">= 0.3.6", require: false
+gem "cgi", ">= 0.4.2", require: false
 
 gem "prism"
 
@@ -85,9 +85,9 @@ gem "web-console", require: false
 # Action Pack and railties
 rack_version = ENV.fetch("RACK", "~> 3.0")
 if rack_version != "head"
-  gem "rack", rack_version
+  gem "rack", ">= 3.1.11", rack_version
 else
-  gem "rack", git: "https://github.com/rack/rack.git", branch: "main"
+  gem "rack", ">= 3.1.11", git: "https://github.com/rack/rack.git", branch: "main"
 end
 
 gem "useragent", require: false
